@@ -5,6 +5,8 @@ public class varstring  {
 
         String b; // Deuxième façon
         b = "Test2";
+
+        String txt = new String("Bonjour"); // Dernière manière
     }
 
 }
