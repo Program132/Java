@@ -23,7 +23,7 @@ public class bot {
 	public static void main(String[] args)
     {
         api = new DiscordApiBuilder()
-            .setToken("TOKEN")
+            .setToken("token de mon bot")
             .login().join();
         
         
