@@ -2,7 +2,7 @@
 
 =======================================
 
-# My code Java !
+# My Java Code !
 
 ---------------------------------------
 
@@ -12,7 +12,7 @@ __You can found my project in java :__
 >- Exemple discord bot
 
 
-Exemple : 
+Example : 
 
 <pre><code>
 	import java.util.Scanner;
