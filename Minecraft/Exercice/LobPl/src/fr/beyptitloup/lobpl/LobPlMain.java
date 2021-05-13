@@ -1,8 +1,8 @@
-package fr.beyptitloup.gmpl;
+package fr.beyptitloup.lobpl;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class GmPl extends JavaPlugin{
+public class LobPlMain extends JavaPlugin {
 	Manager manager = new Manager();
 	
 	@Override
@@ -10,7 +10,6 @@ public class GmPl extends JavaPlugin{
 		manager.load(this);
 	}
 	
-	@Override
 	public void onDisable() {
 		manager.unload();
 	}

@@ -1,0 +1,13 @@
+name: LobPl
+main: fr.beyptitloup.lobpl.LobPlMain
+version: 1.0
+author: beyptitloup
+description: Plugin about lobby -> setlobby and lobby
+commands:
+  setlobby:
+    description: Command to set the location of the hub, lobby
+    permission: setlobby.use
+    aliases: [sethub]
+  lobby:
+    aliases: [hub]
+    description: Command to go to the hub, lobby
