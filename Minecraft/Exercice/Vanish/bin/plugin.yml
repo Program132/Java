@@ -1,0 +1,10 @@
+name: Vanish
+main: fr.beyptitloup.vanish.VanishMain
+version: 1.0
+author: beyptitloup
+description: Plugin to be invisible or visible !
+commands:
+  vanish:
+    permission: vanish.use
+    aliases: [invisible, v]
+    description: Command to be visible or invisible
