@@ -1,0 +1,14 @@
+name: PluginTutoriel
+main: fr.beyptitloup.plugintutoriel.PluginTutorielMain
+version: 1.0
+author: beyptitloup
+commands:
+  test:
+    description: Command de test
+    aliases: [tests, testes, teste]
+  broadcast:
+    description: Command pour envoyer un message
+    aliases: [bdct, bd, bt, bct]
+  lobby:
+    description: Command pour aller au lobby
+    aliases: [hub, lobbies, hubs]
