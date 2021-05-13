@@ -1,0 +1,8 @@
+name: DuelPl
+main: fr.beyptitloup.duelpl.DuelPlMain
+version: 1.0
+author: beyptitloup
+commands:
+  join:
+    aliases: [rejoindre, joins]
+    description: Join the duel of Players !

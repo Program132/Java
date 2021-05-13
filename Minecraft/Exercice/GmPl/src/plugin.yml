@@ -1,0 +1,10 @@
+name: GmPl
+main: fr.beyptitloup.gmpl.GmPl
+version: 1.0
+author: beyptitloup
+description: Command to change gamemode
+commands:
+  gm:
+    permission: gm.use
+    description: Command to change the gamemode of the player who execute it
+    aliases: [gamemode, gms, gamemodes]
