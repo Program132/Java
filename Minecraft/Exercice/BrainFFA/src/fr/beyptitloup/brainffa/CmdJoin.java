@@ -2,6 +2,7 @@ package fr.beyptitloup.brainffa;
 
 import java.util.Random;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -11,10 +12,17 @@ import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.scoreboard.DisplaySlot;
+import org.bukkit.scoreboard.Objective;
+import org.bukkit.scoreboard.Score;
+import org.bukkit.scoreboard.Scoreboard;
+import org.bukkit.scoreboard.ScoreboardManager;
 
 import net.md_5.bungee.api.ChatColor;
 
 public class CmdJoin implements CommandExecutor {
+	
+	private static BrainFFAMain instance = Manager.getInstance();
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
@@ -62,6 +70,16 @@ public class CmdJoin implements CommandExecutor {
 			}
 			
 			plr.teleport(loc);
+			
+			ScoreboardManager manager = Bukkit.getScoreboardManager();
+			Scoreboard board = manager.getNewScoreboard();
+			Objective objective = board.registerNewObjective("test", "dummy");
+			objective.setDisplayName("BRAIN FFA");
+			objective.setDisplaySlot(DisplaySlot.SIDEBAR);
+			Score score = objective.getScore(ChatColor.GREEN + "Player Kills:"); 
+			score.setScore(instance.getConfig().getInt("player." + plr.getName() + ".kills"));
+			plr.setScoreboard(board);
+
 			
 			
 		} else {

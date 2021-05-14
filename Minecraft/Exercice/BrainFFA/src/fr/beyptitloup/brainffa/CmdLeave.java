@@ -5,6 +5,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.scoreboard.DisplaySlot;
 
 import net.md_5.bungee.api.ChatColor;
 
@@ -19,6 +20,8 @@ public class CmdLeave implements CommandExecutor {
 			
 			Location loc = new Location(plr.getWorld(), 161, 76, 271);
 			plr.teleport(loc);
+			
+			plr.getScoreboard().clearSlot(DisplaySlot.SIDEBAR);
 		} else {
 			sender.sendMessage(ChatColor.RED + "[BrainFFA]" + ChatColor.WHITE + " You must be a player!");
 		}

@@ -8,5 +8,5 @@ commands:
     description: Join the fight on BrainFFA
     aliases: [rejoindre, joined]
   leave:
-    description: Join the fight on BrainFFA
+    description: Leave the fight on BrainFFA
     aliases: [quitter, left]
