@@ -1,0 +1,9 @@
+name: Fly
+main: fr.beyptitloup.fly.Fly
+version: 1.0
+author: beyptitloup
+description: Plugin about Flying
+commands:
+  flying:
+    permission: flying.use
+    description: Command to fly
