@@ -1,0 +1,8 @@
+name: Armorstand
+main: fr.beyptitloup.armorstand.Armorstand
+version: 1.0
+author: beyptitloup
+commands:
+  spawn:
+    permission: spawn.armor.use
+    description: Spawn a armor stand
