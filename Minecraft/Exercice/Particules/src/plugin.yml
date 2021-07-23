@@ -1,0 +1,9 @@
+name: Particules
+main: fr.beyptitloup.particules.Particules
+version: 1.0
+author: beyptitloup
+description: Plugin about particules
+commands:
+  do:
+    permission: do.use
+    description: A command to do a particules !
