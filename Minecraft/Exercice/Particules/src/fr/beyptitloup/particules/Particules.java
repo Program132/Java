@@ -27,7 +27,7 @@ public class Particules extends JavaPlugin {
 	
 	// Particle
 	
-	public void spamCircle(Player plr, Effect effect) {
+	public void spamCircle(Player plr) {
 		
 		new BukkitRunnable() {
 			
@@ -50,7 +50,7 @@ public class Particules extends JavaPlugin {
 		
 	}
 	
-	public void followCircle(Player plr, int size, Effect effect) {
+	public void followCircle(Player plr) {
 
         new BukkitRunnable() {
             int t = 0;
@@ -59,6 +59,8 @@ public class Particules extends JavaPlugin {
             @Override
             public void run() {
             	Location loc = plr.getLocation();
+            	
+            	int size = 3;
             	
                 t += 5;
 
@@ -74,4 +76,41 @@ public class Particules extends JavaPlugin {
             }
         }.runTaskTimer(this, 0, 1);
     }
+	
+	public void spamNote(Player plr) {
+		new BukkitRunnable() {
+
+			@Override
+			public void run() {
+				Location loc = plr.getLocation();
+				
+				Location locParticle = new Location(plr.getWorld(), loc.getX(), loc.getY() + 2, loc.getZ());
+				loc.getWorld().playEffect(locParticle, Effect.NOTE, 1);
+				
+				Location locParticle2 = new Location(plr.getWorld(), loc.getX() + 2, loc.getY() + 2, loc.getZ() + 2);
+				loc.getWorld().playEffect(locParticle2, Effect.NOTE, 1);
+				
+				Location locParticle3 = new Location(plr.getWorld(), loc.getX() - 2, loc.getY() + 2, loc.getZ() - 2);
+				loc.getWorld().playEffect(locParticle3, Effect.NOTE, 1);
+			}
+			
+		}.runTaskTimer(this, 0, 10);
+	}
+	
+	public void spamExplosion(Player plr) {
+		new BukkitRunnable() {
+
+			@Override
+			public void run() {
+				Location loc = plr.getLocation();
+				
+				Location locParticle2 = new Location(plr.getWorld(), loc.getX() + 2, loc.getY() + 3, loc.getZ() + 2);
+				loc.getWorld().playEffect(locParticle2, Effect.SMOKE, 1);
+				
+				Location locParticle3 = new Location(plr.getWorld(), loc.getX() - 2, loc.getY() + 3, loc.getZ() - 2);
+				loc.getWorld().playEffect(locParticle3, Effect.SMOKE, 1);
+			}
+			
+		}.runTaskTimer(this, 0, 10);
+	}
 }

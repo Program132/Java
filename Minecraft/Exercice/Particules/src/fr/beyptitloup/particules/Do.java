@@ -1,6 +1,5 @@
 package fr.beyptitloup.particules;
 
-import org.bukkit.ChatColor;
 import org.bukkit.Effect;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
@@ -29,8 +28,6 @@ public class Do implements CommandExecutor {
 			
 			if (args.length == 1) {
 				if (args[0].equalsIgnoreCase("flame")) {
-					plr.sendMessage("Vous venez d'utiliser la particule : "+ ChatColor.RED + " flame");
-					
 					Location loc = plr.getLocation();
 					Effect effect = Effect.FLAME;
 					
@@ -46,8 +43,6 @@ public class Do implements CommandExecutor {
 					}
 					
 				} else if (args[0].equalsIgnoreCase("note")) {
-					plr.sendMessage("Vous venez d'utiliser la particule : "+ ChatColor.RED + " note");
-					
 					Location loc = plr.getLocation();
 					
 					for (int i = 0; i < 360; i += 5) {
@@ -57,8 +52,6 @@ public class Do implements CommandExecutor {
 					}
 					
 				} else if (args[0].equalsIgnoreCase("circulaire")) {
-					plr.sendMessage("Vous venez d'utiliser la particule : "+ ChatColor.RED + " circulaire");
-					
 					Location loc = plr.getLocation();
 					
 					for (double t = 0; t < 50; t += 0.5) {
@@ -72,19 +65,13 @@ public class Do implements CommandExecutor {
 						((CraftPlayer)plr).getHandle().playerConnection.sendPacket(particle);
 					}
 				} else if (args[0].equalsIgnoreCase("spamcircu")) {
-					plr.sendMessage("Vous venez d'utiliser la particule : "+ ChatColor.RED + " spamcircu");
-					
-					Effect effect = Effect.FLAME;
-					
-					instance.spamCircle(plr, effect);
-					
+					instance.spamCircle(plr);
+				} else if (args[0].equalsIgnoreCase("spamnote")) {
+					instance.spamNote(plr);
+				} else if (args[0].equalsIgnoreCase("spamexplo")) {
+					instance.spamExplosion(plr);
 				} else if (args[0].equalsIgnoreCase("followcircu")) {
-					plr.sendMessage("Vous venez d'utiliser la particule : "+ ChatColor.RED + " followcircu");
-					
-					Effect effect = Effect.FLAME;
-					
-					instance.followCircle(plr, 1, effect);
-					
+					instance.followCircle(plr);
 				} else {
 					plr.sendMessage("Mettez un argument !");
 				}	
