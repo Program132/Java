@@ -25,20 +25,24 @@ public class Armorstand extends JavaPlugin {
     public void followAS(Player plr, ArmorStand as) {
         new BukkitRunnable() {
             int t = 0;
-
+            double size = 2;
 
             @Override
             public void run() {
                 Location loc = plr.getLocation();
                 
                 t += 5;
+                size += 0.01;
                 
-                int size = 2;
+                if (size >= 4) {
+                	as.remove();
+                	cancel();
+                }
 
                 float radius = (float) Math.toRadians(t);
                 
-                float x =  size*(float)Math.sin(radius);
-                float z = size*(float)Math.cos(radius);
+                double x =  size*(double)Math.sin(radius);
+                double z = size*(double)Math.cos(radius);
                 
                 x += loc.getX();
                 z += loc.getZ();
